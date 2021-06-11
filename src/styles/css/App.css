@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.frame-name {
+  width: 100vw;
+  height: 3em;
+  background: linear-gradient(0deg, #0656e1 0%, #2b72ec 30%, #0656e1 80%, #2481eb 90%, #1e60ac 100%);
+  border-bottom: 4px solid #0043b8;
+  color: #FFF;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+.frame-name__content {
+  padding: 0.6em 0.5em;
+  display: flex;
+  align-items: center;
+}
+.frame-name__content .icon {
+  margin-right: 0.2em;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+/*# sourceMappingURL=App.css.map */

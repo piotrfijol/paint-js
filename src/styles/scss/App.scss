@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.frame-name {
+    width: 100vw;
+    height: 3em;
+    background: linear-gradient(0deg, 
+        rgb(6,86,225) 0%, 
+        rgb(43, 114, 236) 30%, 
+        rgb(6,86,225) 80%, 
+        rgb(36, 129, 235) 90%,  
+        rgb(30, 96, 172) 100%);
+    border-bottom: 4px solid rgb(0, 67, 184);
+
+    color: #FFF;
+    font-family: sans-serif;
+    font-weight: 600;
+    
+    &__content {
+        padding: .6em .5em;
+        display: flex;
+        align-items: center;
+
+        .icon {
+            margin-right: .2em;
+        }
+    }
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+}
