@@ -1,4 +1,4 @@
-import '../styles/css/App.css';
+import '../styles/css/Window.css';
 import logo from '../icons/logo.png';
 
 function Window({title, children}) {
