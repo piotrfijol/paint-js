@@ -3,27 +3,47 @@
   padding: 0;
 }
 
+body {
+  font-family: sans-serif;
+}
+
 .frame-name {
   width: 100vw;
-  height: 3em;
-  background: linear-gradient(0deg, #0656e1 0%, #2b72ec 30%, #0656e1 80%, #2481eb 90%, #1e60ac 100%);
-  border-bottom: 4px solid #0043b8;
+  height: 2.5em;
+  background: linear-gradient(0deg, #0656e1 0%, #2b72ec 30%, #1463eb 80%, #2481eb 90%, #1e60ac 100%);
   color: #FFF;
-  font-family: sans-serif;
   font-weight: 600;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .frame-name__content {
-  padding: 0.6em 0.5em;
+  padding: 0.5em 0.8em;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 .frame-name__content .icon {
-  margin-right: 0.2em;
+  margin-right: 0.7em;
+  width: 16px;
+  height: 24px;
 }
 
 .icon {
   width: 32px;
   height: 32px;
+}
+
+.frame {
+  background-color: #f0f0f0;
+  border: 4px solid #0043b8;
+  min-height: 100vh;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+.navbar ul li {
+  padding: 0.4em 0.5em;
 }
 
 /*# sourceMappingURL=App.css.map */

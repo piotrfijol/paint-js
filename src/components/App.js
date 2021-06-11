@@ -1,15 +1,22 @@
 import '../styles/css/App.css';
 import logo from '../icons/logo.png';
+import Window from './Window';
 
 function App() {
   return (
     <div className="container">
-      <div className="frame-name">
-        <div className="frame-name__content">
-          <img src={logo} alt="logo" id="logo" className="icon" />
-          <p>frameName - PaintJS</p>
+      <Window title="Bez tytulu - PaintJS">
+        <div className="navbar">
+            <ul>
+            <li>File</li>
+            <li>Edit</li>
+            <li>View</li>
+            <li>Image</li>
+            <li>Colors</li>
+            <li>Help</li>
+            </ul>
         </div>
-      </div>
+      </Window>
     </div>
   );
 }
