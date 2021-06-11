@@ -11,6 +11,8 @@ import drawLineIcon from '../icons/drawLine.png'
 import drawCurveIcon from '../icons/drawCurve.png'
 import zoomIcon from '../icons/zoom.png'
 import pickColorIcon from '../icons/pickColor.png'
+import drawRectIcon from '../icons/drawRect.png'
+import drawEllipseIcon from '../icons/drawEllipse.png'
 import Icon from './Icon';
 import '../styles/css/Toolbar.css';
 
@@ -29,6 +31,8 @@ export default function Toolbar() {
             <Icon src={textIcon} />
             <Icon src={drawLineIcon} />
             <Icon src={drawCurveIcon} />
+            <Icon src={drawRectIcon} />
+            <Icon src={drawEllipseIcon} />
         </div>
     )
 }

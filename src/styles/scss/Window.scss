@@ -1,5 +1,5 @@
 $border-primary-color: rgb(0, 67, 184);
-$frame-primary-color: rgb(230, 230, 230);
+$frame-primary-color: rgb(235, 232, 215);
 $frame-secondary-color: rgb(250, 250, 250);
 
 * {
@@ -40,13 +40,8 @@ body {
     border-top-right-radius: 8px;
 }
 
-.icon {
-    width: 28px;
-    height: 28px;
-}
 
 .frame {
     background-color: $frame-primary-color;
     border: 4px solid $border-primary-color;
-    min-height: 100vh;
 }
