@@ -29,17 +29,36 @@
   margin: auto;
   margin-top: 1em;
 }
-.container .canvas {
-  flex: 1;
+.container .canvas-container {
   border-right: none;
   margin-right: 4px;
-  overflow: scroll;
+  overflow: auto;
+  flex: 1;
+  background-color: #7c7c7c;
 }
-.container .canvas canvas {
+.container .canvas-container canvas {
   background-color: #FFF;
-  border: 5px solid #7c7c7c;
-  width: 100%;
-  height: 100%;
+  border: 4px solid transparent;
+}
+.container .canvas-container .canvas {
+  position: relative;
+  border: 4px solid transparent;
+}
+.container .canvas-container .canvas .resize {
+  width: 5px;
+  height: 5px;
+  background-color: #FFF;
+  border: 1px solid #000;
+  position: absolute;
+}
+.container .canvas-container .canvas .y-resize {
+  cursor: s-resize;
+}
+.container .canvas-container .canvas .xy-resize {
+  cursor: se-resize;
+}
+.container .canvas-container .canvas .x-resize {
+  cursor: w-resize;
 }
 
 .bottom-section {
