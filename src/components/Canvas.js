@@ -7,6 +7,7 @@ export default function Canvas({selectedTool: tool}) {
     const [ctx, setCtx] = useState(null);
     const [width, setWidth] = useState(250);
     const [height, setHeight] = useState(250);
+    let copyOfCanvas;
     let canvasRef = createRef();
     let canvasWrapperRef = createRef();
 
@@ -35,12 +36,22 @@ export default function Canvas({selectedTool: tool}) {
 
     const handleMouseMove = e => {
       if(ctx !== null && isDragging === true) {
-        ctx.lineTo(e.clientX - offset.x, e.clientY - offset.y);
-        ctx.stroke();
+        if(tool === "pencil") {
+          ctx.lineWidth = 1;
+          ctx.strokeStyle = "#000";
+          ctx.lineTo(e.clientX - offset.x, e.clientY - offset.y);
+          ctx.stroke();
+        } else if ( tool === "eraser" ) {
+          ctx.lineWidth = 15;
+          ctx.strokeStyle = "#FFF";
+          ctx.lineTo(e.clientX - offset.x, e.clientY - offset.y);
+          ctx.stroke();
+        }
       }
     }
 
     const handleResize = (item, e) => {
+      ctx.putImageData(copyOfCanvas, 0, 0);
       if(item.contains("y-resize"))
         setHeight(e.clientY-offset.y);
       else if(item.contains("xy-resize")) {
@@ -53,28 +64,17 @@ export default function Canvas({selectedTool: tool}) {
 
     let handler;
 
-    const startResizingY = e => {
+    const startResizing = e => {
+      ctx.imageSmoothingEnabled = false; 
       e.preventDefault();
-      handler = handleResize.bind(null, e.target.classList);
-      window.addEventListener('mousemove', handler);
-      window.addEventListener('mouseup', finishResizing);
-    }
-
-    const startResizingX = e => {
-      e.preventDefault();
-      handler = handleResize.bind(null, e.target.classList);
-      window.addEventListener('mousemove', handler);
-      window.addEventListener('mouseup', finishResizing);
-    }
-
-    const startResizingXY = e => {
-      e.preventDefault();
+      copyOfCanvas = ctx.getImageData(0, 0, width, height);
       handler = handleResize.bind(null, e.target.classList);
       window.addEventListener('mousemove', handler);
       window.addEventListener('mouseup', finishResizing);
     }
 
     const finishResizing = e => {
+      ctx.putImageData(copyOfCanvas, 0, 0);
       window.removeEventListener('mousemove', handler);
       window.removeEventListener('mouseup', finishResizing);
     }
@@ -93,21 +93,21 @@ export default function Canvas({selectedTool: tool}) {
               left: width/2,
               top: height+8
             }}
-            onMouseDown={startResizingY}
+            onMouseDown={startResizing}
           />
           <div className="xy-resize resize" 
             style = {{
-              left: width,
+              left: width+8,
               top: height+8
             }}
-            onMouseDown={startResizingXY}
+            onMouseDown={startResizing}
           />
           <div className="x-resize resize" 
             style = {{
               left: width+8,
               top: height/2
             }}
-            onMouseDown={startResizingX}
+            onMouseDown={startResizing}
           />
           </div>
         </div>
