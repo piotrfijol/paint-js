@@ -1,10 +1,19 @@
 import '../styles/css/App.css';
 import Window from './Window';
 import Toolbar from './Toolbar';
+import Canvas from './Canvas';
+import { useState } from 'react';
 
 
 
 function App() {
+
+  const [tool, setTool] = useState("");
+
+  const chooseTool = e => {
+    e.stopPropagation();
+    setTool(e.currentTarget.dataset.toolname);
+  }
 
   const generateColors = () => {
     let colors = [];
@@ -33,14 +42,10 @@ function App() {
         </div>
         <div className="container">
           <div className="aside">
-            <Toolbar />
-            <div className="additional-options">
-
-            </div>
+            <Toolbar selectedTool={tool} onClick={chooseTool}/>
+            <div className="additional-options"></div>
           </div>
-          <div className="canvas">
-            <canvas></canvas>
-          </div>
+          <Canvas selectedTool={tool}/>
         </div>
         <div className="bottom-section">
           <div className="colors">

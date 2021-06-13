@@ -2,16 +2,31 @@ body {
 }
 
 
+.navbar {
+    height: 2em;
+    ul {
+        display: flex;
+        list-style: none;
+    
+        li {
+            padding: .4em .5em;
+        }
+    }
+
+}
+
 .container {
     display: flex;
     width: 100%;
-
+    min-height: 25em;
+    flex: 1;
 
     .aside {
         width: 5.5em;
         padding: .5em;
         box-sizing: border-box;
         border-top: 2px solid rgb(197, 194, 194);
+        height: 100%;
 
         .additional-options {
             width: 90%;
@@ -23,8 +38,6 @@ body {
     }
 
     .canvas {
-        width: auto;
-        height: 100%;
         flex: 1;
         border-right: none; 
         margin-right: 4px;
@@ -39,18 +52,6 @@ body {
     
     }
     
-}
-
-.navbar {
-    ul {
-        display: flex;
-        list-style: none;
-    
-        li {
-            padding: .4em .5em;
-        }
-    }
-
 }
 
 .bottom-section {

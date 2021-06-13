@@ -44,4 +44,8 @@ body {
 .frame {
     background-color: $frame-primary-color;
     border: 4px solid $border-primary-color;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 3em);
+    min-height: 600px;
 }

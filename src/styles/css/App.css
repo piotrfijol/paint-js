@@ -1,12 +1,26 @@
+.navbar {
+  height: 2em;
+}
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+.navbar ul li {
+  padding: 0.4em 0.5em;
+}
+
 .container {
   display: flex;
   width: 100%;
+  min-height: 25em;
+  flex: 1;
 }
 .container .aside {
   width: 5.5em;
   padding: 0.5em;
   box-sizing: border-box;
   border-top: 2px solid #c5c2c2;
+  height: 100%;
 }
 .container .aside .additional-options {
   width: 90%;
@@ -16,8 +30,6 @@
   margin-top: 1em;
 }
 .container .canvas {
-  width: auto;
-  height: 100%;
   flex: 1;
   border-right: none;
   margin-right: 4px;
@@ -28,14 +40,6 @@
   border: 5px solid #7c7c7c;
   width: 100%;
   height: 100%;
-}
-
-.navbar ul {
-  display: flex;
-  list-style: none;
-}
-.navbar ul li {
-  padding: 0.4em 0.5em;
 }
 
 .bottom-section {
