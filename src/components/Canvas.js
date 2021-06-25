@@ -10,6 +10,10 @@ export default function Canvas({selectedTool: tool}) {
     let copyOfCanvas;
     let canvasRef = createRef();
     let canvasWrapperRef = createRef();
+    let startingMousePos = {
+      x: 0,
+      y: 0
+    };
 
     useEffect(() => {
       if(canvasRef.current) {
@@ -27,10 +31,16 @@ export default function Canvas({selectedTool: tool}) {
       setDrag(true);
       ctx.beginPath();
       ctx.moveTo(e.clientX - offset.x, e.clientY - offset.y);
+      startingMousePos.x = e.clientX - offset.x;
+      startingMousePos.y = e.clientY - offset.y;
     }
 
     const handleCanvasMouseUp = e => {
       setDrag(false);
+      if (tool === "draw-line" && isDragging === true) {
+        ctx.lineTo(e.clientX - offset.x, e.clientY - offset.y);
+        ctx.stroke();
+      }
     }
 
 
@@ -46,7 +56,7 @@ export default function Canvas({selectedTool: tool}) {
           ctx.strokeStyle = "#FFF";
           ctx.lineTo(e.clientX - offset.x, e.clientY - offset.y);
           ctx.stroke();
-        }
+        } 
       }
     }
 
