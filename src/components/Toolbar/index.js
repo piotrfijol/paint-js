@@ -1,7 +1,7 @@
 import React from 'react'
-import Icon from './Icon';
-import '../styles/css/Toolbar.css';
-import { iconNames, icons } from '../data/iconData';
+import Icon from '../Icon';
+import '../styles/scss/Toolbar.scss';
+import { iconNames, icons } from '../../../data/iconData';
 
 export default function Toolbar({onClick: setTool, selectedTool}) {
 

@@ -1,4 +1,4 @@
-import '../styles/css/Window.css';
+import '../styles/scss/Window.scss';
 import logo from '../icons/logo.png';
 
 function Window({title, children}) {

@@ -1,7 +1,7 @@
-import '../styles/css/App.css';
-import Window from './Window';
-import Toolbar from './Toolbar';
-import Canvas from './Canvas';
+import '../styles/scss/App.scss';
+import Window from '../Window';
+import Toolbar from '../Icon/Toolbar/Toolbar';
+import Canvas from '../Canvas';
 import { useState } from 'react';
 
 
